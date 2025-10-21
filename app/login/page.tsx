@@ -9,10 +9,10 @@ export default function LoginPage() {
   const [email, setEmail] = useState("procodrr@gmail.com");
   const [password, setPassword] = useState("123456");
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Logging in:", { email, password });
-    router.push("/dashboard");
+    router.push("/");
   };
 
   return (
