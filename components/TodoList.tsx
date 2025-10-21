@@ -4,7 +4,22 @@ import TodoItem from "./TodoItem";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TodoList = ({ todos, deleteTodo, toggleTodo, updateTodo }) => {
+// Define the Todo interface
+interface Todo {
+  id: string | number;
+  text: string;
+  completed: boolean;
+}
+
+// Define the props interface
+interface TodoListProps {
+  todos: Todo[];
+  deleteTodo: (id: string | number) => void;
+  toggleTodo: (id: string | number) => void;
+  updateTodo: (id: string | number, text: string) => void;
+}
+
+const TodoList = ({ todos, deleteTodo, toggleTodo, updateTodo }: TodoListProps) => {
   const [filter, setFilter] = useState("all");
 
   const filteredTodos = todos.filter((todo) => {

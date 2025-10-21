@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const DB_URI = "mongodb://admin:admin@localhost/todoApp?authSource=admin";
+// const DB_URI = "mongodb://admin:admin@localhost/todoApp?authSource=admin";
+const DB_URI = "mongodb://127.0.0.1:27017/nextAuth_db";
 
 export const connectDB = async () => {
   try {

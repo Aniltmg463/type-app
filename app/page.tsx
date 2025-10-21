@@ -1,13 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import TodoList from "@/components/TodoList";
-import TodoForm from "@/components/TodoForm";
+import TodoForm from "../components/TodoForm";
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "lucide-react";
+// import TodoList from "@/components/TodoList";
+import TodoList from "../components/TodoList";
+
+// Define the Todo interface
+interface Todo {
+  id: string | number;
+  text: string;
+  completed: boolean;
+}
+
 
 export default function Home() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
   const { theme = "dark", setTheme } = useTheme();
 
   useEffect(() => {
@@ -21,7 +30,7 @@ export default function Home() {
   };
 
   // Add new todo
-  const addTodo = async (text) => {
+  const addTodo = async (text: string): Promise<void> => {
     const response = await fetch("/api/todos", {
       method: "POST",
       body: JSON.stringify({ text }),
@@ -31,7 +40,7 @@ export default function Home() {
   };
 
   // Delete todo
-  const deleteTodo = async (id) => {
+  const deleteTodo = async (id: string | number): Promise<void> => {
     const response = await fetch(`/api/todos/${id}`, {
       method: "DELETE",
     });
@@ -42,8 +51,10 @@ export default function Home() {
   };
 
   // Toggle todo completion
-  const toggleTodo = async (id) => {
+  const toggleTodo = async (id: string | number): Promise<void> => {
     const todo = todos.find((todo) => todo.id === id);
+    if (!todo) return;
+    
     const response = await fetch(`/api/todos/${id}`, {
       method: "PUT",
       body: JSON.stringify({ completed: !todo.completed }),
@@ -55,7 +66,7 @@ export default function Home() {
   };
 
   // Update todo text
-  const updateTodo = async (id, newText) => {
+  const updateTodo = async (id: string | number, newText: string): Promise<void> => {
     const response = await fetch(`/api/todos/${id}`, {
       method: "PUT",
       body: JSON.stringify({ text: newText }),

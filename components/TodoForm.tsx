@@ -3,10 +3,14 @@
 import { useState } from 'react';
 import { PlusIcon } from 'lucide-react';
 
-const TodoForm = ({ addTodo }) => {
+interface TodoFormProps {
+  addTodo: (todo: string) => void;
+}
+
+const TodoForm = ({ addTodo }: TodoFormProps) => {
   const [input, setInput] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (input.trim()) {
       addTodo(input.trim());

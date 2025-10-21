@@ -3,7 +3,20 @@
 import { useState } from "react";
 import { TrashIcon, PencilIcon, Check, X } from "lucide-react";
 
-const TodoItem = ({ todo, deleteTodo, toggleTodo, updateTodo }) => {
+interface Todo {
+  id: string | number;
+  text: string;
+  completed: boolean;
+}
+
+interface TodoItemProps {
+  todo: Todo;
+  deleteTodo: (id: string | number) => void;
+  toggleTodo: (id: string | number) => void;
+  updateTodo: (id: string | number, text: string) => void;
+}
+
+const TodoItem = ({ todo, deleteTodo, toggleTodo, updateTodo }: TodoItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(todo.text);
 
@@ -24,7 +37,11 @@ const TodoItem = ({ todo, deleteTodo, toggleTodo, updateTodo }) => {
     setEditText(todo.text);
   };
 
-  const handleKeyDown = (e) => {
+  interface KeyboardEvent {
+    key: string;
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleSave();
     } else if (e.key === "Escape") {
