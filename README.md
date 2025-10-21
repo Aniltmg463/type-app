@@ -34,3 +34,35 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+cmd:
+m1
+npx shadcn@latest add form
+npm install zod
+
+m2
+npm install react-hook-form zod @hookform/resolvers
+
+m3: follow this
+npx shadcn@latest init
+npx shadcn@latest add form input button
+
+//
+src/
+├── components/
+│   ├── forms/
+│   │   ├── PracticeForm.tsx       ← Main form UI component
+│   │   └── schemas/
+│   │       └── practiceFormSchema.ts  ← Zod validation schema
+│   └── ui/                         ← From shadcn/ui (Button, Input, Form components)
+│       ├── button.tsx
+│       ├── input.tsx
+│       └── form.tsx
+
+
+✅ Benefits of This Structure
+Reusable: You can easily import the schema or form elsewhere.
+Scalable: Add more forms under forms/ (e.g., LoginForm, RegisterForm, etc.)
+Clean separation: Logic (schema) and UI (form) are independent.
+Easier testing: You can test schema validation separately from the UI.
