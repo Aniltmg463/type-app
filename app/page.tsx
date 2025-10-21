@@ -1,41 +1,16 @@
-// "use client";
+// import Header from "@/components/Header";
+import Header from './../components/Header';
 
-// import { useQuery } from "@tanstack/react-query";
-// import Page from './todo/page';
-
-// export default function Home() {
-//   const { data, isLoading, isError } = useQuery({
-//     queryKey: ["todos"],
-//     queryFn: () =>
-//       fetch("https://jsonplaceholder.typicode.com/todos").then((res) => res.json()),
-//   });
-
-//   if (isLoading) {
-//     return <div>Loading ...</div>;
-//   }
-
-//   if (isError) {
-//     return <div>Something went wrong!</div>;
-//   }
-
-//   return (
-//     <div>
-//       <h1>Todos</h1>
-//       <ul>
-//         {data.slice(0, 5).map((todo: any) => (
-//           <li key={todo.id}>{todo.title}</li>
-//         ))}
-//       </ul>
-//       <Page/>
-//     </div>
-//   );
-// }
-'use client'
-
-export default function Page(){
-  return(
+const Home = () => {
+  return (
     <>
-    <h1>Main Page</h1>
+      <Header />
+      <div>
+        <h1>Home Page</h1>
+        <p>Welcome to our website!</p>
+      </div>
     </>
-  )
-}
+  );
+};
+
+export default Home;
