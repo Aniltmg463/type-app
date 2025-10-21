@@ -1,7 +1,39 @@
+// 'use client'
+// import React from 'react'
+// import Home from './usetanstack'
+
+// const page = () => {
+//   return (
+//     <div>todo component</div>
+//     // <Home/> //throw error bcux it is not function
+    
+//   )
+// }
+
+// export default page
+
+
+// ?????????????????????????????????????????
+
+'use client'
+
+import Home from "./usetanstack"
+
+export default function Page(){
+    return (
+         <>
+   <h1>hello</h1>
+   <Home/>
+    </>
+    )
+   
+}
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // "use client";
 
 // import { useQuery } from "@tanstack/react-query";
-// import Page from './todo/page';
 
 // export default function Home() {
 //   const { data, isLoading, isError } = useQuery({
@@ -26,16 +58,6 @@
 //           <li key={todo.id}>{todo.title}</li>
 //         ))}
 //       </ul>
-//       <Page/>
 //     </div>
 //   );
 // }
-'use client'
-
-export default function Page(){
-  return(
-    <>
-    <h1>Main Page</h1>
-    </>
-  )
-}
