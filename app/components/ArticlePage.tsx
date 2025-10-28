@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function ArticlePage({ article, relatedArticles }: ArticlePageProps) {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Header navigationLinks={["Page", "Page", "Page"]} />
       
       <main>
