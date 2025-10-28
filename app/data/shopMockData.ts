@@ -28,7 +28,7 @@ export const mockShopPageProps: ShopPageProps = {
     name: "Featured product",
     description: "Description of featured product",
     price: 10.99,
-    image: "/images/featured-product.jpg"
+    image: "/images/shop-featured.jpg"
   },
   products: [
     {
@@ -36,14 +36,14 @@ export const mockShopPageProps: ShopPageProps = {
       name: "Product",
       description: "Description of top product",
       price: 10.99,
-      image: "/images/product-1.jpg"
+      image: "/images/shop-product-1.jpg"
     },
     {
       id: "prod-2",
       name: "Product",
       description: "Description of lower product",
       price: 10.99,
-      image: "/images/product-4.jpg"
+      image: "/images/shop-product-2.jpg"
     }
   ],
   features: [
