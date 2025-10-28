@@ -12,10 +12,10 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
       <main>
         <section className="px-20 py-16">
           <div className="flex flex-col gap-6 max-w-3xl">
-            <h1 className="font-inter text-[64px] font-bold leading-[77px] tracking-[-1.28px] text-product-text-primary">
+            <h1 className="article-title">
               {article.title}
             </h1>
-            <p className="text-2xl font-inter font-normal leading-9 text-black/75">
+            <p className="article-subheading">
               {article.subheading}
             </p>
           </div>
@@ -40,7 +40,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
                 return (
                   <div key={index} className="mb-12">
                     {block.text?.split('\n\n').map((paragraph, pIndex) => (
-                      <p key={pIndex} className="text-xl font-inter font-medium leading-[30px] text-product-text-primary mb-6">
+                      <p key={pIndex} className="article-body mb-6">
                         {paragraph}
                       </p>
                     ))}
@@ -71,7 +71,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
         </section>
 
         <section className="px-20 py-16">
-          <h2 className="product-title mb-12">Related articles or posts</h2>
+          <h2 className="article-related-heading mb-12">Related articles or posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {relatedArticles.map((article) => (
               <ArticleCard key={article.id} article={article} />

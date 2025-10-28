@@ -14,10 +14,7 @@ export const mockArticlePageProps: ArticlePageProps = {
       },
       {
         type: "images" as const,
-        images: [
-          "https://images.unsplash.com/photo-1669908978664-485e69bc26cd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwyfHxicmVhZCUyMGNoZWVzZSUyMHdpbmUlMjBmb29kfGVufDB8MHx8fDE3NjE2NDUwOTh8MA&ixlib=rb-4.1.0&q=85",
-          "https://images.unsplash.com/photo-1599819177626-b50f9dd21c9b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwyfHx3aW5lJTIwZnJ1aXRzJTIwYmFza2V0JTIwZm9vZHxlbnwwfDB8fHwxNzYxNjQ1MDk4fDA&ixlib=rb-4.1.0&q=85"
-        ]
+        images: ["/images/landing-v2-section-1.png", "/images/landing-v2-feature-2.png"]
       },
       {
         type: "text" as const,
@@ -30,19 +27,19 @@ export const mockArticlePageProps: ArticlePageProps = {
       id: "related-1",
       title: "Title",
       author: "Author",
-      image: "/images/product-2.jpg"
+      image: "/images/article-related-1.jpg"
     },
     {
       id: "related-2",
       title: "Title",
       author: "Author",
-      image: "/images/product-6.jpg"
+      image: "/images/article-related-2.jpg"
     },
     {
       id: "related-3",
       title: "Title",
       author: "Author",
-      image: "/images/product-4.jpg"
+      image: "/images/article-related-3.jpg"
     }
   ]
 };

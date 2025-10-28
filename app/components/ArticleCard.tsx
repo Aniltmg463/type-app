@@ -17,8 +17,8 @@ export default function ArticleCard({ article }: ArticleCardProps) {
         />
       </div>
       <div className="flex flex-col gap-1">
-        <h3 className="product-nav-link">{article.title}</h3>
-        <p className="product-nav-link text-product-text-secondary">{article.author}</p>
+        <h3 className="article-card-title">{article.title}</h3>
+        <p className="article-card-author">{article.author}</p>
       </div>
     </div>
   );
