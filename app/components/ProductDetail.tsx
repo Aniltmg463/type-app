@@ -1,0 +1,33 @@
+import type { Product } from '../types/product';
+import Image from 'next/image';
+
+interface ProductDetailProps {
+  product: Product;
+}
+
+export default function ProductDetail({ product }: ProductDetailProps) {
+  return (
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 px-20 py-16">
+      <div className="relative aspect-[5/6] rounded-xl overflow-hidden bg-product-image-bg">
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+      
+      <div className="flex flex-col gap-6">
+        <h1 className="product-title">{product.name}</h1>
+        <p className="product-subheading">{product.subheading}</p>
+        <p className="product-price">${product.price.toFixed(2)}</p>
+        <p className="product-body">{product.description}</p>
+        <button className="bg-product-button-bg text-product-button-text py-4 rounded-md product-button-text hover:opacity-90 transition-opacity w-full">
+          Add to cart
+        </button>
+        <p className="product-fine-print">{product.additionalInfo}</p>
+      </div>
+    </section>
+  );
+}
