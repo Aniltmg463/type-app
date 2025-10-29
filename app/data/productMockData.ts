@@ -56,7 +56,7 @@ export const mockRootProps: ProductDetailPageProps = {
     }
   ],
   navigation: {
-    header: ["Page", "Page", "Page"],
+    header: ["Article", "Shop", "Product Detail"],
     footer: [
       {
         topic: "Topic",

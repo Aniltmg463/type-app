@@ -4,10 +4,13 @@ import ArticleCard from './ArticleCard';
 import Footer from './Footer';
 import Image from 'next/image';
 
-export default function ArticlePage({ article, relatedArticles }: ArticlePageProps) {
+export default function ArticlePage({ header, article, relatedArticles }: ArticlePageProps) {
   return (
     <div className="min-h-screen bg-white">
-      <Header navigationLinks={["Page", "Page", "Page"]} />
+      <Header 
+        siteName={header.siteName}
+        navigationLinks={header.navigationLinks}
+      />
       
       <main>
         <section className="px-20 py-16">

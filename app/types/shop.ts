@@ -30,6 +30,10 @@ export interface ShopFeature {
 }
 
 export interface ShopPageProps {
+  header: {
+    siteName: string;
+    navigationLinks: string[];
+  };
   hero: ShopHero;
   sections: ShopSection[];
   featuredProduct: ShopProduct;

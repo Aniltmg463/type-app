@@ -2,6 +2,10 @@
 import type { ArticlePageProps } from '../types/article';
 
 export const mockArticlePageProps: ArticlePageProps = {
+  header: {
+    siteName: "Site name",
+    navigationLinks: ["Article", "Shop", "Product Detail"]
+  },
   article: {
     id: "article-1",
     title: "Article or post title",

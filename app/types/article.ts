@@ -22,6 +22,10 @@ export interface RelatedArticle {
 }
 
 export interface ArticlePageProps {
+  header: {
+    siteName: string;
+    navigationLinks: string[];
+  };
   article: Article;
   relatedArticles: RelatedArticle[];
 }

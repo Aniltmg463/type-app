@@ -2,6 +2,10 @@
 import type { ShopPageProps } from '../types/shop';
 
 export const mockShopPageProps: ShopPageProps = {
+  header: {
+    siteName: "Site name",
+    navigationLinks: ["Article", "Shop", "Product Detail"]
+  },
   hero: {
     title: "Shop title",
     subheading: "Subheading with description of your shopping site",

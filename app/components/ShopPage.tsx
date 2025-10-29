@@ -7,6 +7,7 @@ import FeatureList from './FeatureList';
 import Footer from './Footer';
 
 export default function ShopPage({
+  header,
   hero,
   sections,
   featuredProduct,
@@ -16,7 +17,10 @@ export default function ShopPage({
   return (
     <div className="min-h-screen bg-background">
       <div className="absolute top-0 left-0 right-0 z-20">
-        <Header navigationLinks={["Page", "Page", "Page"]} />
+        <Header 
+          siteName={header.siteName}
+          navigationLinks={header.navigationLinks}
+        />
       </div>
       
       <main>
