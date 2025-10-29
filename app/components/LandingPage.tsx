@@ -21,28 +21,28 @@ export default function LandingPage({
       <Header navigationLinks={["Page", "Page", "Page"]} />
       
       <main>
-        <section className="px-20 py-16">
-          <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-6 max-w-4xl">
-              <h1 className="font-inter text-[64px] font-bold leading-[77px] tracking-[-1.28px] text-product-text-primary">
+        <section className="px-5 sm:px-10 lg:px-20 py-8 sm:py-12 lg:py-16">
+          <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
+            <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 max-w-4xl">
+              <h1 className="landing-hero-title">
                 {hero.title}
               </h1>
-              <p className="text-2xl font-inter font-normal leading-9 text-black/75">
+              <p className="landing-hero-subheading">
                 {hero.subheading}
               </p>
             </div>
             <button 
               type="button"
               onClick={() => router.push('/')}
-              className="bg-product-button-bg text-product-button-text px-6 py-4 rounded-md text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 w-fit"
+              className="bg-product-button-bg text-product-button-text px-5 sm:px-6 py-3 sm:py-4 rounded-md text-lg sm:text-xl lg:text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 w-fit"
             >
               Button
             </button>
           </div>
         </section>
 
-        <section className="px-20 pb-16">
-          <div className="relative w-full h-[640px] rounded-lg overflow-hidden">
+        <section className="px-5 sm:px-10 lg:px-20 pb-8 sm:pb-12 lg:pb-16">
+          <div className="relative w-full h-[300px] sm:h-[450px] lg:h-[640px] rounded-lg overflow-hidden">
             <Image
               src={hero.heroImage}
               alt={hero.title}
@@ -54,13 +54,13 @@ export default function LandingPage({
         </section>
 
         {featureSections.map((section) => (
-          <section key={section.id} className="px-20 py-16">
-            <h2 className="text-5xl font-inter font-semibold tracking-[-0.96px] text-product-text-primary mb-12">
+          <section key={section.id} className="px-5 sm:px-10 lg:px-20 py-8 sm:py-12 lg:py-16">
+            <h2 className="landing-section-heading mb-6 sm:mb-8 lg:mb-12">
               {section.heading}
             </h2>
             
             {section.features && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {section.features.map((feature) => (
                   <FeatureCard key={feature.id} feature={feature} />
                 ))}
@@ -68,36 +68,36 @@ export default function LandingPage({
             )}
 
             {section.content && section.image && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                <div className="flex flex-col gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
+                <div className="flex flex-col gap-6 sm:gap-8">
                   {section.content.map((item, index) => (
                     <div key={index} className="flex flex-col gap-2">
-                      <h3 className="text-2xl font-inter font-medium text-product-text-primary">
+                      <h3 className="landing-feature-title">
                         {item.title}
                       </h3>
-                      <p className="text-xl font-inter font-normal leading-[30px] text-product-text-secondary">
+                      <p className="landing-feature-description">
                         {item.description}
                       </p>
                     </div>
                   ))}
-                  <div className="flex gap-4 mt-4">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 sm:mt-4">
                     <button 
                       type="button"
                       onClick={() => router.push('/')}
-                      className="bg-product-button-bg text-product-button-text px-6 py-4 rounded-lg text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+                      className="bg-product-button-bg text-product-button-text px-5 sm:px-6 py-3 sm:py-4 rounded-lg text-lg sm:text-xl lg:text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
                     >
                       Button
                     </button>
                     <button 
                       type="button"
                       onClick={() => router.push('/')}
-                      className="bg-gray-200 text-product-text-primary px-6 py-4 rounded-lg text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+                      className="bg-gray-200 text-product-text-primary px-5 sm:px-6 py-3 sm:py-4 rounded-lg text-lg sm:text-xl lg:text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
                     >
                       Secondary button
                     </button>
                   </div>
                 </div>
-                <div className="relative w-full h-[704px] rounded-l-lg overflow-hidden">
+                <div className="relative w-full h-[350px] sm:h-[500px] lg:h-[704px] rounded-lg overflow-hidden">
                   <Image
                     src={section.image}
                     alt={section.heading}
@@ -110,11 +110,11 @@ export default function LandingPage({
           </section>
         ))}
 
-        <section className="px-20 py-16">
-          <h2 className="text-5xl font-inter font-semibold tracking-[-0.96px] text-product-text-primary mb-12">
+        <section className="px-5 sm:px-10 lg:px-20 py-8 sm:py-12 lg:py-16">
+          <h2 className="landing-section-heading mb-6 sm:mb-8 lg:mb-12">
             Section heading
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
             {testimonials.map((testimonial) => (
               <TestimonialCard key={testimonial.id} testimonial={testimonial} />
             ))}
@@ -122,24 +122,24 @@ export default function LandingPage({
         </section>
 
         <section 
-          className="px-20 py-20 flex items-center justify-between"
+          className="px-5 sm:px-10 lg:px-20 py-10 sm:py-14 lg:py-20 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-8"
           style={{ backgroundColor: ctaSection.backgroundColor }}
         >
-          <h2 className="text-5xl font-inter font-semibold tracking-[-0.96px] text-product-text-primary">
+          <h2 className="landing-section-heading">
             {ctaSection.heading}
           </h2>
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full lg:w-auto">
             <button 
               type="button"
               onClick={() => router.push('/')}
-              className="bg-product-button-bg text-product-button-text px-6 py-4 rounded-md text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+              className="bg-product-button-bg text-product-button-text px-5 sm:px-6 py-3 sm:py-4 rounded-md text-lg sm:text-xl lg:text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
             >
               Button
             </button>
             <button 
               type="button"
               onClick={() => router.push('/')}
-              className="bg-white text-black/90 px-6 py-4 rounded-md text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+              className="bg-white text-black/90 px-5 sm:px-6 py-3 sm:py-4 rounded-md text-lg sm:text-xl lg:text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
             >
               Secondary button
             </button>

@@ -45,22 +45,22 @@ body {
 /* Typography utilities */
 @utility product-title {
   font-family: Inter, sans-serif;
-  font-size: 40px;
+  font-size: clamp(28px, 5vw, 40px);
   font-weight: 600;
-  line-height: 48px;
+  line-height: 1.2;
   color: var(--product-text-primary);
 }
 
 @utility product-heading {
   font-family: Inter, sans-serif;
-  font-size: 32px;
+  font-size: clamp(24px, 4vw, 32px);
   font-weight: 600;
   color: var(--product-text-primary);
 }
 
 @utility product-subheading {
   font-family: Inter, sans-serif;
-  font-size: 24px;
+  font-size: clamp(18px, 3vw, 24px);
   font-weight: 400;
   color: var(--product-text-secondary);
 }
@@ -74,9 +74,9 @@ body {
 
 @utility product-body {
   font-family: Inter, sans-serif;
-  font-size: 20px;
+  font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 400;
-  line-height: 30px;
+  line-height: 1.5;
   color: var(--product-text-secondary);
 }
 
@@ -139,41 +139,41 @@ body {
 /* Landing page v2 typography utilities */
 @utility landing-hero-title {
   font-family: Inter, sans-serif;
-  font-size: 64px;
+  font-size: clamp(32px, 6vw, 64px);
   font-weight: 700;
-  line-height: 77px;
-  letter-spacing: -1.28px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--product-text-primary);
 }
 
 @utility landing-hero-subheading {
   font-family: Inter, sans-serif;
-  font-size: 24px;
+  font-size: clamp(16px, 3vw, 24px);
   font-weight: 400;
-  line-height: 36px;
+  line-height: 1.5;
   color: rgba(0, 0, 0, 0.75);
 }
 
 @utility landing-section-heading {
   font-family: Inter, sans-serif;
-  font-size: 48px;
+  font-size: clamp(28px, 5vw, 48px);
   font-weight: 600;
-  letter-spacing: -0.96px;
+  letter-spacing: -0.02em;
   color: var(--product-text-primary);
 }
 
 @utility landing-feature-title {
   font-family: Inter, sans-serif;
-  font-size: 24px;
+  font-size: clamp(18px, 3vw, 24px);
   font-weight: 500;
   color: var(--product-text-primary);
 }
 
 @utility landing-feature-description {
   font-family: Inter, sans-serif;
-  font-size: 24px;
+  font-size: clamp(16px, 2.5vw, 24px);
   font-weight: 400;
-  line-height: 36px;
+  line-height: 1.5;
   color: var(--product-text-secondary);
 }
 
@@ -194,34 +194,34 @@ body {
 /* Article page typography utilities */
 @utility article-title {
   font-family: Inter, sans-serif;
-  font-size: 64px;
+  font-size: clamp(32px, 6vw, 64px);
   font-weight: 700;
-  line-height: 77px;
-  letter-spacing: -1.28px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--product-text-primary);
 }
 
 @utility article-subheading {
   font-family: Inter, sans-serif;
-  font-size: 24px;
+  font-size: clamp(16px, 3vw, 24px);
   font-weight: 400;
-  line-height: 36px;
+  line-height: 1.5;
   color: rgba(0, 0, 0, 0.75);
 }
 
 @utility article-body {
   font-family: Inter, sans-serif;
-  font-size: 20px;
+  font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 500;
-  line-height: 30px;
+  line-height: 1.5;
   color: var(--product-text-primary);
 }
 
 @utility article-related-heading {
   font-family: Inter, sans-serif;
-  font-size: 40px;
+  font-size: clamp(28px, 4.5vw, 40px);
   font-weight: 600;
-  line-height: 44px;
+  line-height: 1.1;
   color: var(--product-text-primary);
 }
 

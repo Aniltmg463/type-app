@@ -17,8 +17,8 @@ export default function FeatureGridSection({
     : 'grid grid-cols-1 md:grid-cols-2 gap-8';
 
   return (
-    <section className="px-20 py-16">
-      <h2 className="landing-section-heading mb-12">
+    <section className="px-5 sm:px-10 lg:px-20 py-8 sm:py-12 lg:py-16">
+      <h2 className="landing-section-heading mb-6 sm:mb-8 lg:mb-12">
         {heading}
       </h2>
       <div className={gridClass}>

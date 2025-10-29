@@ -12,8 +12,8 @@ export default function ProductDetail({ product }: ProductDetailProps) {
   const router = useRouter();
 
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 px-20 py-16">
-      <div className="relative aspect-[5/6] rounded-xl overflow-hidden bg-product-image-bg">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 px-5 sm:px-10 lg:px-20 py-8 sm:py-12 lg:py-16">
+      <div className="relative aspect-[4/5] sm:aspect-[5/6] rounded-xl overflow-hidden bg-product-image-bg">
         <Image
           src={product.image}
           alt={product.name}
@@ -23,7 +23,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         />
       </div>
       
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6">
         <h1 className="product-title">{product.name}</h1>
         <p className="product-subheading">{product.subheading}</p>
         <p className="product-price">${product.price.toFixed(2)}</p>
@@ -31,7 +31,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         <button 
           type="button"
           onClick={() => router.push('/shop')}
-          className="bg-product-button-bg text-product-button-text py-4 rounded-md product-button-text hover:opacity-90 hover:scale-105 transition-all duration-200 w-full"
+          className="bg-product-button-bg text-product-button-text py-3 sm:py-4 rounded-md text-sm sm:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 w-full"
         >
           Add to cart
         </button>
