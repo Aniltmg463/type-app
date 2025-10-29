@@ -12,9 +12,7 @@ export default function Header({ siteName = "Site name", navigationLinks }: Head
           <a
             key={index}
             href="#"
-            className={index === navigationLinks.length - 1 
-              ? "hidden sm:inline-block bg-product-button-bg text-product-button-text px-4 lg:px-6 py-2 lg:py-3 rounded-md text-sm lg:text-base font-inter font-medium hover:opacity-90 transition-opacity" 
-              : "hidden md:inline-block text-sm lg:text-xl font-inter font-medium text-white hover:opacity-70 transition-opacity"}
+            className="hidden sm:inline-block bg-product-button-bg text-product-button-text px-4 lg:px-6 py-2 lg:py-3 rounded-md text-sm lg:text-base font-inter font-medium hover:opacity-90 transition-opacity"
           >
             {link}
           </a>
