@@ -22,16 +22,19 @@ export default function Header({ siteName = "Site name", navigationLinks }: Head
   const router = useRouter();
 
   return (
-    <header className="flex items-center justify-between px-5 sm:px-10 lg:px-20 py-6 lg:py-8">
-      <Link href="/" className="product-nav-link text-base sm:text-lg lg:text-xl hover:opacity-80 transition-opacity">
+    <header className="flex flex-wrap items-center justify-between gap-4 px-5 sm:px-10 lg:px-20 py-4 sm:py-6 lg:py-8">
+      <Link 
+        href="/" 
+        className="product-nav-link text-base sm:text-lg lg:text-xl hover:opacity-80 transition-opacity shrink-0"
+      >
         {siteName}
       </Link>
-      <nav className="flex items-center gap-4 sm:gap-6 lg:gap-12">
+      <nav className="flex flex-wrap items-center gap-2 sm:gap-3 lg:gap-4">
         {navigationLinks.map((link, index) => (
           <Link
             key={index}
             href={getLinkPath(link)}
-            className="hidden sm:inline-block bg-product-button-bg text-product-button-text px-4 lg:px-6 py-2 lg:py-3 rounded-md text-sm lg:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+            className="bg-product-button-bg text-product-button-text px-3 sm:px-4 lg:px-6 py-2 lg:py-3 rounded-md text-xs sm:text-sm lg:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 whitespace-nowrap"
           >
             {link}
           </Link>
@@ -39,7 +42,7 @@ export default function Header({ siteName = "Site name", navigationLinks }: Head
         <button 
           type="button"
           onClick={() => router.push('/')}
-          className="bg-product-button-bg text-product-button-text px-4 lg:px-6 py-2 lg:py-3 rounded-md text-sm lg:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+          className="bg-product-button-bg text-product-button-text px-3 sm:px-4 lg:px-6 py-2 lg:py-3 rounded-md text-xs sm:text-sm lg:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 whitespace-nowrap"
         >
           Button
         </button>
