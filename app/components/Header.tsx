@@ -5,21 +5,21 @@ interface HeaderProps {
 
 export default function Header({ siteName = "Site name", navigationLinks }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between px-20 py-8">
-      <div className="product-nav-link">{siteName}</div>
-      <nav className="flex items-center gap-12">
+    <header className="flex items-center justify-between px-5 sm:px-10 lg:px-20 py-6 lg:py-8">
+      <div className="product-nav-link text-base sm:text-lg lg:text-xl">{siteName}</div>
+      <nav className="flex items-center gap-4 sm:gap-6 lg:gap-12">
         {navigationLinks.map((link, index) => (
           <a
             key={index}
             href="#"
             className={index === navigationLinks.length - 1 
-              ? "bg-product-button-bg text-product-button-text px-6 py-3 rounded-md product-button-text hover:opacity-90 transition-opacity" 
-              : "product-nav-link hover:opacity-70 transition-opacity"}
+              ? "hidden sm:inline-block bg-product-button-bg text-product-button-text px-4 lg:px-6 py-2 lg:py-3 rounded-md text-sm lg:text-base font-inter font-medium hover:opacity-90 transition-opacity" 
+              : "hidden md:inline-block text-sm lg:text-xl font-inter font-medium text-white hover:opacity-70 transition-opacity"}
           >
             {link}
           </a>
         ))}
-        <button className="bg-product-button-bg text-product-button-text px-6 py-3 rounded-md product-button-text hover:opacity-90 transition-opacity">
+        <button className="bg-product-button-bg text-product-button-text px-4 lg:px-6 py-2 lg:py-3 rounded-md text-sm lg:text-base font-inter font-medium hover:opacity-90 transition-opacity">
           Button
         </button>
       </nav>

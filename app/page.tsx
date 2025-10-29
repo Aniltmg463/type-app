@@ -6,8 +6,7 @@ import { mockRootProps } from './data/productMockData';
 export default function Home() {
   return (
     <>
-      {/* <LandingPageV2 {...mockLandingV2Data}/> */}
-      <ProductDetailPage {...mockRootProps} />
+      <LandingPageV2 {...mockLandingV2Data}/>
     </>
   );
 }

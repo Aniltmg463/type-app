@@ -39,13 +39,13 @@ export default function ShopPage({
           />
         ))}
 
-        <section className="px-20 py-16">
-          <h2 className="text-5xl font-inter font-semibold tracking-[-0.96px] text-product-text-primary mb-12">
+        <section className="px-5 sm:px-10 lg:px-20 py-12 lg:py-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-semibold tracking-[-0.96px] text-product-text-primary mb-8 lg:mb-12">
             Section heading
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 lg:gap-8">
             <ShopProductCard product={featuredProduct} featured={true} />
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-6 lg:gap-10">
               {products.map((product) => (
                 <ShopProductCard key={product.id} product={product} />
               ))}
@@ -53,8 +53,8 @@ export default function ShopPage({
           </div>
         </section>
 
-        <section className="px-20 py-16">
-          <h2 className="text-5xl font-inter font-semibold tracking-[-0.96px] text-product-text-primary mb-12">
+        <section className="px-5 sm:px-10 lg:px-20 py-12 lg:py-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-semibold tracking-[-0.96px] text-product-text-primary mb-8 lg:mb-12">
             Section heading
           </h2>
           <FeatureList features={features} />

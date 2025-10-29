@@ -1,6 +1,6 @@
-import LandingPage from '../components/LandingPage';
-import { mockLandingPageProps } from '../data/landingMockData';
+import LandingPageV2 from '../components/LandingPageV2';
+import { mockLandingV2Data } from '../data/landingV2MockData';
 
-export default function Landing() {
-  return <LandingPage {...mockLandingPageProps} />;
+export default function LandingV2Page() {
+  return <LandingPageV2 {...mockLandingV2Data} />;
 }

@@ -19,12 +19,12 @@ const iconComponents = {
 
 export default function Footer({ siteName = "Site name", navigationLinks, socialIcons }: FooterProps) {
   return (
-    <footer className="px-20 py-16">
-      <div className="border-t border-product-border pt-12">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-          <div className="flex flex-col gap-8">
-            <h3 className="product-subheading">{siteName}</h3>
-            <div className="flex gap-2">
+    <footer className="px-5 sm:px-10 lg:px-20 py-12 lg:py-16">
+      <div className="border-t border-product-border pt-8 lg:pt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="flex flex-col gap-6 lg:gap-8">
+            <h3 className="text-xl lg:text-2xl font-inter font-medium text-product-text-primary">{siteName}</h3>
+            <div className="flex gap-3">
               {socialIcons.map((social) => {
                 const IconComponent = iconComponents[social.icon as keyof typeof iconComponents];
                 return IconComponent ? (

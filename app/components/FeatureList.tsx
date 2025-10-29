@@ -17,7 +17,7 @@ const iconComponents = {
 
 export default function FeatureList({ features }: FeatureListProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-8 lg:gap-y-12">
       {features.map((feature) => {
         const IconComponent = iconComponents[feature.icon as keyof typeof iconComponents];
         return (
@@ -25,10 +25,10 @@ export default function FeatureList({ features }: FeatureListProps) {
             {IconComponent && (
               <IconComponent width={24} height={24} color="#454545" />
             )}
-            <h3 className="text-2xl font-inter font-medium text-product-text-primary">
+            <h3 className="text-xl lg:text-2xl font-inter font-medium text-product-text-primary">
               {feature.title}
             </h3>
-            <p className="text-xl font-inter font-normal leading-[30px] text-product-text-secondary">
+            <p className="text-lg lg:text-xl font-inter font-normal leading-relaxed lg:leading-[30px] text-product-text-secondary">
               {feature.description}
             </p>
           </div>
