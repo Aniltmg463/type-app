@@ -1,5 +1,8 @@
+'use client'
+
 import type { ContentItemV2, ButtonConfig } from '../types/landing';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface ContentWithImageSectionProps {
   heading: string;
@@ -14,6 +17,8 @@ export default function ContentWithImageSection({
   image,
   buttons 
 }: ContentWithImageSectionProps) {
+  const router = useRouter();
+
   return (
     <section className="px-20 py-16">
       <h2 className="landing-section-heading mb-12">
@@ -35,10 +40,12 @@ export default function ContentWithImageSection({
             {buttons.map((button, index) => (
               <button
                 key={index}
+                type="button"
+                onClick={() => router.push('/')}
                 className={
                   button.variant === 'primary'
-                    ? 'bg-product-button-bg text-product-button-text px-6 py-3 rounded-md landing-button-primary hover:opacity-90 transition-opacity'
-                    : 'bg-gray-200 text-black/90 px-6 py-3 rounded-md landing-button-secondary hover:opacity-90 transition-opacity'
+                    ? 'bg-product-button-bg text-product-button-text px-6 py-3 rounded-md landing-button-primary hover:opacity-90 hover:scale-105 transition-all duration-200'
+                    : 'bg-gray-200 text-black/90 px-6 py-3 rounded-md landing-button-secondary hover:opacity-90 hover:scale-105 transition-all duration-200'
                 }
               >
                 {button.text}

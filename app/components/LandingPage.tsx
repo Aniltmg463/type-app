@@ -1,9 +1,12 @@
+'use client'
+
 import type { LandingPageProps } from '../types/landing';
 import Header from './Header';
 import FeatureCard from './FeatureCard';
 import TestimonialCard from './TestimonialCard';
 import Footer from './Footer';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function LandingPage({
   hero,
@@ -11,6 +14,8 @@ export default function LandingPage({
   testimonials,
   ctaSection,
 }: LandingPageProps) {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-background">
       <Header navigationLinks={["Page", "Page", "Page"]} />
@@ -26,7 +31,11 @@ export default function LandingPage({
                 {hero.subheading}
               </p>
             </div>
-            <button className="bg-product-button-bg text-product-button-text px-6 py-4 rounded-md text-2xl font-inter font-medium hover:opacity-90 transition-opacity w-fit">
+            <button 
+              type="button"
+              onClick={() => router.push('/')}
+              className="bg-product-button-bg text-product-button-text px-6 py-4 rounded-md text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 w-fit"
+            >
               Button
             </button>
           </div>
@@ -72,10 +81,18 @@ export default function LandingPage({
                     </div>
                   ))}
                   <div className="flex gap-4 mt-4">
-                    <button className="bg-product-button-bg text-product-button-text px-6 py-4 rounded-lg text-2xl font-inter font-medium hover:opacity-90 transition-opacity">
+                    <button 
+                      type="button"
+                      onClick={() => router.push('/')}
+                      className="bg-product-button-bg text-product-button-text px-6 py-4 rounded-lg text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+                    >
                       Button
                     </button>
-                    <button className="bg-gray-200 text-product-text-primary px-6 py-4 rounded-lg text-2xl font-inter font-medium hover:opacity-90 transition-opacity">
+                    <button 
+                      type="button"
+                      onClick={() => router.push('/')}
+                      className="bg-gray-200 text-product-text-primary px-6 py-4 rounded-lg text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+                    >
                       Secondary button
                     </button>
                   </div>
@@ -112,10 +129,18 @@ export default function LandingPage({
             {ctaSection.heading}
           </h2>
           <div className="flex gap-4">
-            <button className="bg-product-button-bg text-product-button-text px-6 py-4 rounded-md text-2xl font-inter font-medium hover:opacity-90 transition-opacity">
+            <button 
+              type="button"
+              onClick={() => router.push('/')}
+              className="bg-product-button-bg text-product-button-text px-6 py-4 rounded-md text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+            >
               Button
             </button>
-            <button className="bg-white text-black/90 px-6 py-4 rounded-md text-2xl font-inter font-medium hover:opacity-90 transition-opacity">
+            <button 
+              type="button"
+              onClick={() => router.push('/')}
+              className="bg-white text-black/90 px-6 py-4 rounded-md text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+            >
               Secondary button
             </button>
           </div>

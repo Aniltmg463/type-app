@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface HeroSectionProps {
   title: string;
@@ -15,6 +18,8 @@ export default function HeroSection({
   showButton = false,
   hasOverlay = false 
 }: HeroSectionProps) {
+  const router = useRouter();
+
   return (
     <section className="relative w-full h-[500px] sm:h-[600px] lg:h-[720px] flex items-center justify-center">
       <Image
@@ -37,7 +42,11 @@ export default function HeroSection({
           </p>
         </div>
         {showButton && (
-          <button className="bg-product-button-bg text-product-button-text px-5 lg:px-6 py-3 lg:py-4 rounded-md text-base lg:text-lg font-inter font-medium hover:opacity-90 transition-opacity">
+          <button 
+            type="button"
+            onClick={() => router.push('/')}
+            className="bg-product-button-bg text-product-button-text px-5 lg:px-6 py-3 lg:py-4 rounded-md text-base lg:text-lg font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+          >
             Button
           </button>
         )}

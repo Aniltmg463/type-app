@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface ContentSectionProps {
   heading: string;
@@ -15,6 +18,8 @@ export default function ContentSection({
   imagePosition,
   showButtons = false 
 }: ContentSectionProps) {
+  const router = useRouter();
+
   const content = (
     <div className="flex flex-col gap-4 lg:gap-6 max-w-xl">
       <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-inter font-semibold lg:leading-[48px] text-product-text-primary">{heading}</h2>
@@ -23,10 +28,18 @@ export default function ContentSection({
       </p>
       {showButtons && (
         <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
-          <button className="bg-product-button-bg text-product-button-text px-5 lg:px-6 py-3 lg:py-4 rounded-lg text-lg lg:text-2xl font-inter font-medium hover:opacity-90 transition-opacity">
+          <button 
+            type="button"
+            onClick={() => router.push('/')}
+            className="bg-product-button-bg text-product-button-text px-5 lg:px-6 py-3 lg:py-4 rounded-lg text-lg lg:text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+          >
             Button
           </button>
-          <button className="bg-gray-200 text-product-text-primary px-5 lg:px-6 py-3 lg:py-4 rounded-lg text-lg lg:text-2xl font-inter font-medium hover:opacity-90 transition-opacity">
+          <button 
+            type="button"
+            onClick={() => router.push('/')}
+            className="bg-gray-200 text-product-text-primary px-5 lg:px-6 py-3 lg:py-4 rounded-lg text-lg lg:text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200"
+          >
             Secondary button
           </button>
         </div>
