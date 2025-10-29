@@ -8,7 +8,6 @@ interface HeaderProps {
   navigationLinks: string[];
 }
 
-// Map navigation link names to their routes
 const getLinkPath = (linkName: string): string => {
   const linkMap: Record<string, string> = {
     'Article': '/article',
@@ -18,7 +17,7 @@ const getLinkPath = (linkName: string): string => {
   return linkMap[linkName] || '#';
 };
 
-export default function Header({ siteName = "Site Grocery Shop", navigationLinks }: HeaderProps) {
+export default function Header({ siteName = "Grocery Shop", navigationLinks }: HeaderProps) {
   const router = useRouter();
 
   return (

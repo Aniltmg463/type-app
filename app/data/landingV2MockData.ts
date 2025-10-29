@@ -8,7 +8,7 @@ export const mockLandingV2Data: LandingPageV2Props = {
   hero: {
     title: "Landing page title",
     subheading: "Subheading that sets up context, shares more info about the website, or generally gets people psyched to keep scrolling.",
-    buttonText: "Button",
+    buttonText: "Button1",
     heroImage: "/images/landing-v2-hero.png"
   },
   featureSection1: {
@@ -102,8 +102,8 @@ export const mockLandingV2Data: LandingPageV2Props = {
   ctaSection: {
     heading: "Section heading",
     buttons: [
-      { text: "Button", variant: "primary" as const },
-      { text: "Secondary button", variant: "secondary" as const }
+      { text: "Button2", variant: "primary" as const },
+      { text: "Secondary button1", variant: "secondary" as const }
     ]
   },
   footer: {
