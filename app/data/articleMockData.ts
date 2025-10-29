@@ -3,7 +3,7 @@ import type { ArticlePageProps } from '../types/article';
 
 export const mockArticlePageProps: ArticlePageProps = {
   header: {
-    siteName: "Site name",
+    siteName: "Grocery Shop",
     navigationLinks: ["Article", "Shop", "Product Detail"]
   },
   article: {

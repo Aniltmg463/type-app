@@ -18,7 +18,7 @@ const getLinkPath = (linkName: string): string => {
   return linkMap[linkName] || '#';
 };
 
-export default function Header({ siteName = "Site name", navigationLinks }: HeaderProps) {
+export default function Header({ siteName = "Site Grocery Shop", navigationLinks }: HeaderProps) {
   const router = useRouter();
 
   return (
@@ -44,7 +44,7 @@ export default function Header({ siteName = "Site name", navigationLinks }: Head
           onClick={() => router.push('/')}
           className="bg-product-button-bg text-product-button-text px-3 sm:px-4 lg:px-6 py-2 lg:py-3 rounded-md text-xs sm:text-sm lg:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 whitespace-nowrap"
         >
-          Button
+          Landing Page
         </button>
       </nav>
     </header>

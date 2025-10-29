@@ -17,7 +17,7 @@ const iconComponents = {
   instagram: InstagramIcon,
 };
 
-export default function Footer({ siteName = "Site name", navigationLinks, socialIcons }: FooterProps) {
+export default function Footer({ siteName = "Grocery Shop", navigationLinks, socialIcons }: FooterProps) {
   return (
     <footer className="px-5 sm:px-10 lg:px-20 py-12 lg:py-16">
       <div className="border-t border-product-border pt-8 lg:pt-12">

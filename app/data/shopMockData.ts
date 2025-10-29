@@ -3,7 +3,7 @@ import type { ShopPageProps } from '../types/shop';
 
 export const mockShopPageProps: ShopPageProps = {
   header: {
-    siteName: "Site name",
+    siteName: "Grocery Shop",
     navigationLinks: ["Article", "Shop", "Product Detail"]
   },
   hero: {

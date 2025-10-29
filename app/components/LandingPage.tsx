@@ -36,7 +36,7 @@ export default function LandingPage({
               onClick={() => router.push('/')}
               className="bg-product-button-bg text-product-button-text px-5 sm:px-6 py-3 sm:py-4 rounded-md text-lg sm:text-xl lg:text-2xl font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 w-fit"
             >
-              Button
+              Buttonssss
             </button>
           </div>
         </section>

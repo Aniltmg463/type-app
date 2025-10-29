@@ -2,7 +2,7 @@ import type { LandingPageV2Props } from '../types/landing';
 
 export const mockLandingV2Data: LandingPageV2Props = {
   header: {
-    siteName: "Site name",
+    siteName: "Grocery Shop",
     navigationLinks: ["Article", "Shop", "Product Detail"]
   },
   hero: {
@@ -107,7 +107,7 @@ export const mockLandingV2Data: LandingPageV2Props = {
     ]
   },
   footer: {
-    siteName: "Site name",
+    siteName: "Grocery Shop",
     navigationLinks: [
       {
         topic: "Topic",
