@@ -1,5 +1,6 @@
 'use client'
 
+import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -32,10 +33,11 @@ const SearchIcon = () => (
 
 // Cart Icon Component
 const CartIcon = ({ count }: { count?: number }) => (
-  <div className="relative">
-    <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div className="relative bg-product-button-bg text-product-button-text px-3 sm:px-4 lg:px-6 py-2 lg:py-3 rounded-md text-xs sm:text-sm lg:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 whitespace-nowrap flex items-center justify-center">
+    {/* <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L5 3H3m4 10v6a1 1 0 001 1h8a1 1 0 001-1v-6m-9 0h10" />
-    </svg>
+    </svg> */}
+    <ShoppingCart className="w-5 h-5" />
     {count && count > 0 && (
       <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
         {count > 99 ? '99+' : count}
