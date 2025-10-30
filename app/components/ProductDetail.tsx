@@ -1,5 +1,6 @@
 'use client'
 
+import { ShoppingCart } from 'lucide-react';
 import type { Product } from '../types/product';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -30,9 +31,10 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         <p className="product-body">{product.description}</p>
         <button 
           type="button"
-          onClick={() => router.push('/shop')}
-          className="bg-product-button-bg text-product-button-text py-3 sm:py-4 rounded-md text-sm sm:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 w-full"
+          onClick={() => router.push('/cart')}
+          className="bg-product-button-bg text-product-button-text py-3 sm:py-4 rounded-md text-sm sm:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 w-full flex items-center justify-center gap-2"
         >
+          <ShoppingCart className="w-5 h-5" />
           Add to cart
         </button>
         <p className="product-fine-print">{product.additionalInfo}</p>
