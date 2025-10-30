@@ -4,6 +4,11 @@ import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import SunIcon from './sun-moon-icon/SunIcon';
+import MoonIcon from './sun-moon-icon/MoonIcon';
+// import { useTheme } from '../components/context/ThemeContext.tsx';
+import { useTheme } from './context/ThemeContext';
+import { useEffect } from 'react';
 
 interface HeaderProps {
   siteName?: string;
@@ -57,6 +62,13 @@ export default function Header({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+   const { isDark, toggleTheme }: any = useTheme();
+   const [mounted, setMounted] = useState(false);
+
+   // Ensure button only renders on client to avoid SSR/hydration mismatch
+   useEffect(() => {
+     setMounted(true);
+   }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -124,7 +136,16 @@ export default function Header({
           >
             Landing Page
           </button>
-          
+          {/* Theme Toggle Button */}
+          {mounted && (
+            <button onClick={toggleTheme}
+              className="bg-product-button-bg text-product-button-text px-3 sm:px-4 lg:px-6 py-2 lg:py-3 rounded-md text-xs sm:text-sm lg:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 whitespace-nowrap flex items-center gap-2"
+              aria-label="Toggle theme"
+            >
+              {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
+              <span className="hidden sm:inline">{isDark ? 'Light Mode' : 'Dark Mode'}</span>
+            </button>
+          )}
           {/* Cart Button */}
           <button 
             onClick={onCartClick}
@@ -218,7 +239,6 @@ export default function Header({
             className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
             onClick={handleLinkClick}
           ></div>
-          
           {/* Mobile Menu */}
           <nav className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-100 z-50">
             <div className="flex flex-col p-4 space-y-3">
@@ -242,6 +262,26 @@ export default function Header({
               >
                 Landing Page
               </button>
+              {/* Theme Toggle Button (Mobile) */}
+              {mounted && (
+                <button onClick={toggleTheme}
+                  // className="p-2 rounded-md hover:bg-gray-100 transition-colors mt-2 bg-product-button-bg"
+                  // className="bg-product-button-bg text-product-button-text px-4 py-3 rounded-md text-sm font-inter font-medium hover:opacity-90 transition-all duration-200 text-center"
+                  className="bg-product-button-bg text-product-button-text px-3 sm:px-4 lg:px-6 py-2 lg:py-3 rounded-md text-xs sm:text-sm lg:text-base font-inter font-medium hover:opacity-90 hover:scale-105 transition-all duration-200 whitespace-nowrap flex items-center gap-2"
+                  aria-label="Toggle theme"
+                >
+                  {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
+                  <span className="hidden sm:inline">{isDark ? 'Light Mode' : 'Dark Mode'}</span>
+                </button>
+              )}
+
+               {/* <button onClick={toggleTheme}
+                  // className="p-2 rounded-md hover:bg-gray-100 transition-colors mt-2 bg-product-button-bg"
+                  className="bg-product-button-bg text-product-button-text px-4 py-3 rounded-md text-sm font-inter font-medium hover:opacity-90 transition-all duration-200 text-center"
+                  aria-label="Toggle theme"
+                >
+                  {isDark ? <SunIcon /> : <MoonIcon />}
+                </button> */}
             </div>
           </nav>
         </>
