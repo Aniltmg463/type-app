@@ -47,10 +47,9 @@ export interface LandingPageProps {
 }
 
 // Type definitions for Landing page V2
-
 export interface HeaderConfig {
-  siteName: string;
-  navigationLinks: string[];
+  siteName: string; //Type annotation
+  navigationLinks: string[]; //array type annotation
 }
 
 export interface HeroV2 {
@@ -120,7 +119,7 @@ export interface FooterConfig {
 }
 
 export interface LandingPageV2Props {
-  header: HeaderConfig;
+  header: HeaderConfig; //header -> interface property declaration , HeaderConfig-> referenced interface type 
   hero: HeroV2;
   featureSection1: FeatureSectionV2;
   contentSection: ContentSectionV2;
