@@ -1,4 +1,8 @@
-export default function MoonIcon() {
+interface MoonIconProps {
+  className?: string;
+}
+
+export default function MoonIcon({ className }: MoonIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
