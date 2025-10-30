@@ -18,7 +18,7 @@ export default function LandingPageV2({
   footer,
 }: LandingPageV2Props) {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Header 
         siteName={header.siteName}
         navigationLinks={header.navigationLinks}

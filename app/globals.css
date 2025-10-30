@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
+/* Smooth theme transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -13,6 +18,21 @@
   --product-button-text: #ffffff;
   --product-border: #e6e6e6;
   --product-image-bg: #afc1c9;
+}
+
+/* Dark mode colors */
+:root.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  
+  /* Product page colors for dark mode */
+  --product-text-primary: #ffffff;
+  --product-text-secondary: #a3a3a3;
+  --product-text-tertiary: #d4d4d4;
+  --product-button-bg: #ffffff;
+  --product-button-text: #000000;
+  --product-border: #404040;
+  --product-image-bg: #374151;
 }
 
 @theme inline {
@@ -40,6 +60,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography utilities */
